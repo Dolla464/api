@@ -1,4 +1,4 @@
-async function getApi() {
+(async function getApi() {
     var element = await fetch ("https://dummyjson.com/products");
     var file = await element.json();
     var apiFile = file.products;
@@ -13,13 +13,13 @@ async function getApi() {
         items = items  + cartoona;
     }
     document.querySelector(".test").innerHTML = items;
-}
-getApi();
+})();
+// getApi();
 
 //==============================================================================
 // way 2
 
-function getApii(){
+(function getApii(){
     var xhttpp = new XMLHttpRequest;
     xhttpp.onreadystatechange = function(){
         if(this.readyState==4 && this.status==200){
@@ -41,12 +41,12 @@ function getApii(){
     }
     xhttpp.open("GET" , "https://forkify-api.herokuapp.com/api/search?q=pizza" , true);
     xhttpp.send();
-}
-getApii();
+})();
+// getApii();
 
 //==============================================================================
 // way 3
-function getApiii(){
+(function getApiii(){
     fetch('https://jsonplaceholder.typicode.com/photos')
     .then(function(element){
         return element.json();
@@ -65,5 +65,5 @@ function getApiii(){
             }
             document.querySelector(".testtt").innerHTML = itemsss;
     })
-}
-getApiii();
+})();
+// getApiii();
